@@ -1,4 +1,9 @@
-import '../lib/conta.dart';
+import '../lib/models/conta_corrente.dart';
+import '../lib/models/conta_poupanca.dart';
+import '../lib/models/conta_salario.dart';
+import '../lib/models/conta_empresa.dart';
+import '../lib/models/conta_investimento.dart';
+
 void main(){
   ContaCorrente contaChris = ContaCorrente("Chris", 4000);
   ContaPoupanca contaDenize = ContaPoupanca("Denize", 4000);
