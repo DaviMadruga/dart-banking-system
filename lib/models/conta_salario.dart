@@ -6,10 +6,11 @@ class ContaSalario extends Conta{
 
   ContaSalario(super.titular,super.saldo,this.cnpj,this.empresa);
 
-  void depositarSalario(double salario){
-    saldo += salario;
-
-    print("O salário da $empresa, de CNPJ $cnpj no valor de R\$$salario, foi depositado");
-    imprimeSaldo();
+  bool depositarSalario(double salario){
+    if(salario <= 0){
+      return false;
+    }
+    adicionarSaldo(salario);
+    return true;
   }
 }

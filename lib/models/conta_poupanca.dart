@@ -6,6 +6,8 @@ class ContaPoupanca extends Conta{
   ContaPoupanca(super.titular,super.saldo);
 
   void calculaRendimento(){
-    saldo += saldo * rendimento;
+    if(saldo > 0){
+      adicionarSaldo(saldo * rendimento);
+    }
   }
 }

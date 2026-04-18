@@ -6,13 +6,14 @@ class ContaCorrente extends Conta{
   ContaCorrente(super.titular,super.saldo);
 
   @override
-  void enviar(double valor){
-    if(saldo + emprestimo >= valor){
-      saldo -= valor;
-      imprimeSaldo();
-    }else{
-      print("Saldo insulficiente!");
-      imprimeSaldo();
+  bool enviar(double valor){
+    if(valor <= 0){
+      return false;
     }
+    if(saldo + emprestimo >= valor){
+      removerSaldo(valor);
+      return true;
+    }
+    return false;
   }
 }

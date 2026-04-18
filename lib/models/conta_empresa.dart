@@ -5,16 +5,23 @@ class ContaEmpresa extends Conta with Imposto{
   ContaEmpresa(super.titular,super.saldo);
 
   @override
-  void enviar(double valor){
-    if(saldo >= valor + valorTaxado(valor)){
-      saldo -= valor + valorTaxado(valor);
-      imprimeSaldo();
+  bool enviar(double valor){
+    if(valor <= 0){
+      return false;
     }
+    if(saldo >= valor + valorTaxado(valor)){
+      removerSaldo(valor + valorTaxado(valor));
+      return true;
+    }
+    return false;
   }
 
   @override
-  void receber(double valor){
-    saldo += valor - valorTaxado(valor);
-    imprimeSaldo();
+  bool receber(double valor){
+    if(valor <= 0){
+      return false;
+    }
+    adicionarSaldo(valor - valorTaxado(valor));
+    return true;
   }
 }
