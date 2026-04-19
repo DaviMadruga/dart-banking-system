@@ -1,4 +1,4 @@
-import 'conta.dart';
+import 'package:anybank/models/conta.dart';
 
 class ContaPoupanca extends Conta{
   double rendimento = 0.05;

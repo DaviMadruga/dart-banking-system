@@ -1,4 +1,4 @@
-import 'conta.dart';
+import 'package:anybank/models/conta.dart';
 
 class ContaCorrente extends Conta{
   double emprestimo = 300;

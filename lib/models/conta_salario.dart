@@ -1,4 +1,4 @@
-import 'conta.dart';
+import 'package:anybank/models/conta.dart';
 
 class ContaSalario extends Conta{
   String cnpj;

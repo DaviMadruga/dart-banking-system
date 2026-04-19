@@ -32,4 +32,20 @@ abstract class Conta{
     }
     return false;
   }
+
+  bool transferir(Conta destino, double valor){
+    bool conseguiuEnviar = enviar(valor);
+
+    if(conseguiuEnviar){
+      bool conseguiuReceber = destino.receber(valor);
+
+      if(conseguiuReceber){
+        return true;
+      }else{
+        receber(valor);
+      }
+    }
+
+    return false;
+  }
 }

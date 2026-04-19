@@ -1,5 +1,5 @@
-import 'conta.dart';
-import '../mixins/imposto.dart';
+import 'package:anybank/mixins/imposto.dart';
+import 'package:anybank/models/conta.dart';
 
 class ContaInvestimento extends Conta with Imposto{
   ContaInvestimento(super.titular,super._saldo);
