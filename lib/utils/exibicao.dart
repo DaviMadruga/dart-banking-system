@@ -21,5 +21,9 @@ void mostrarMenu(){
   print("1 - Listar contas");
   print("2 - Buscar conta por titular");
   print("3 - Tranferir entre contas");
-  print("4 - Sair");
+  print("4 - Criar nova conta");
+  print("5 - Depositar dinheiro");
+  print("6 - Sacar dinheiro");
+  print("7 - Ver extrato");
+  print("8 - Sair");
 }

@@ -5,6 +5,7 @@ abstract class Conta{
   Conta(this.titular, this._saldo);
 
   double get saldo => _saldo;
+  List<String> extrato = [];
 
   void adicionarSaldo(double valor){
     _saldo += valor;
@@ -19,6 +20,7 @@ abstract class Conta{
       return false;
     }
     adicionarSaldo(valor);
+    extrato.add("Depósito: R\$${valor}");
     return true;
   }
 
@@ -28,6 +30,7 @@ abstract class Conta{
     }
     if(_saldo >= valor){
       removerSaldo(valor);
+      extrato.add("Saque: -R\$${valor}");
       return true;
     }
     return false;
@@ -40,6 +43,8 @@ abstract class Conta{
       bool conseguiuReceber = destino.receber(valor);
 
       if(conseguiuReceber){
+        extrato.add("Transferência enviada: -R\$${valor} para ${destino.titular}");
+        destino.extrato.add("Transferência recebida: +R\$${valor} de ${this.titular}");
         return true;
       }else{
         receber(valor);
