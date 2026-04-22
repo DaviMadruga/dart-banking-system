@@ -35,4 +35,15 @@ class Banco {
 
     return origem.transferir(destino, valor);
   }
+
+  bool removerContaPorTitular(String titular){
+    Conta? conta = buscarContaPorTitular(titular);
+
+    if(conta == null){
+      return false;
+    }
+
+    contas.remove(conta);
+    return true;
+  }
 }

@@ -25,5 +25,6 @@ void mostrarMenu(){
   print("5 - Depositar dinheiro");
   print("6 - Sacar dinheiro");
   print("7 - Ver extrato");
-  print("8 - Sair");
+  print("8 - Remover conta");
+  print("9 - Sair");
 }

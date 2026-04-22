@@ -83,6 +83,10 @@ void main(){
         verExtrato(banco);
       break;
       case "8":
+        mostrarSecao("REMOÇÃO DE CONTA");
+        removerConta(banco);
+      break;
+      case "9":
         print("Encerrando o sistema...");
         executando = false;
       break;
@@ -244,4 +248,31 @@ void verExtrato(Banco banco){
   }
 
   mostrarSaldo(conta);
+}
+
+void removerConta(Banco banco){
+  String titular = lerEntrada("Digite o nome do titular:");
+
+  if(titular.trim().isEmpty){
+    print("Nome do titular inválido");
+    return;
+  }
+
+  Conta? conta = banco.buscarContaPorTitular(titular);
+
+  if (conta == null) {
+    print("Conta não encontrada.");
+    return;
+  }
+
+  print("Conta encontrada: ${conta.titular} | Saldo: R\$${conta.saldo}");
+
+  String confirmacao = lerEntrada("Tem certeza que deseja remover esta conta? (s/n)");
+
+  if (confirmacao.trim().toLowerCase() == "s") {
+    bool resultado = banco.removerContaPorTitular(titular);
+    mostrarResultado(resultado,"Conta removida com sucesso","Não foi possível remover a conta");
+  }else {
+    print("Operação cancelada.");
+  }
 }
