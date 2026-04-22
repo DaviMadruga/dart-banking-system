@@ -20,11 +20,11 @@ void buscarConta(Banco banco){
   if(contaEncontrada != null){
     print("Conta encontrada: ${contaEncontrada.titular} | Saldo: R\$${contaEncontrada.saldo}");
   }else{
-    print("Conta não encontrada");
+    print("Conta não encontrada.");
   }
 }
 
-void transferenciaDeContas(Banco banco){
+void transferirEntreContas(Banco banco){
   String origem = lerEntrada("Digite o nome do titular da conta de origem:");
   String destino = lerEntrada("Digite o nome do titular da conta de destino:");
   String valorTexto = lerEntrada("Digite o valor da transferência:");
@@ -32,7 +32,7 @@ void transferenciaDeContas(Banco banco){
   double? valor = double.tryParse(valorTexto);
 
   if(valor == null){
-    print("Valor inválido!");
+    print("Valor inválido.");
     return;
   }
 
@@ -65,20 +65,20 @@ void criarConta(Banco banco){
 
   String tipoDeConta = lerEntrada("\nEscolha o tipo de conta:");
   if(!["1","2","3","4","5"].contains(tipoDeConta)){
-    print("\nTipo de conta inválida");
+    print("\nTipo de conta inválida.");
     return;
   } 
 
   String titular = lerEntrada("\nDigite o nome do titular:");
   if(titular.trim().isEmpty){
-    print("\nNome do titular inválido");
+    print("\nNome do titular inválido.");
     return;
   }
 
   String saldoTexto = lerEntrada("\nDigite o saldo inicial:");
   double? saldo = double.tryParse(saldoTexto);
   if(saldo == null || saldo < 0){
-    print("\nSaldo inicial inválido");
+    print("\nSaldo inicial inválido.");
     return;
   }
 
@@ -89,13 +89,13 @@ void criarConta(Banco banco){
     break;
     case "2":
       banco.adicionarConta(ContaPoupanca(titular, saldo));
-      print("Conta Poupaça criada com sucesso");
+      print("Conta Poupança criada com sucesso");
     break;
     case "3":
       String cnpj = lerEntrada("Digite o CNPJ:");
       String empresa = lerEntrada("Digite o nome da empresa:");
       if(cnpj.trim().isEmpty || empresa.trim().isEmpty){
-        print("CNPJ ou empresa inválidos");
+        print("CNPJ ou empresa inválidos.");
         return;
       }
 
@@ -111,7 +111,7 @@ void criarConta(Banco banco){
       print("Conta Investimento criada com sucesso");
     break;
     default:
-      print("Tipo de conta inválido");
+      print("Tipo de conta inválido.");
   }
 }
 
@@ -120,7 +120,7 @@ void depositarEmConta(Banco banco){
   Conta? conta = banco.buscarContaPorTitular(titular);
 
   if(conta == null){
-    print("Conta não encontrada");
+    print("Conta não encontrada.");
     return;
   }
 
@@ -128,7 +128,7 @@ void depositarEmConta(Banco banco){
   double? valor = double.tryParse(valorTexto);
 
   if(valor == null || valor <= 0){
-    print("Valor inválido");
+    print("Valor inválido.");
     return;
   }
 
@@ -144,7 +144,7 @@ void sacarDeConta(Banco banco){
   Conta? conta = banco.buscarContaPorTitular(titular);
 
   if(conta == null){
-    print("Conta não encontrada");
+    print("Conta não encontrada.");
     return;
   }
 
@@ -152,7 +152,7 @@ void sacarDeConta(Banco banco){
   double? valor = double.tryParse(valorTexto);
 
   if(valor == null || valor <= 0 ){
-    print("Valor inválido");
+    print("Valor inválido.");
     return;
   }
 
@@ -169,14 +169,15 @@ void verExtrato(Banco banco){
 
 
   if(conta == null){
-    print("Conta não encontrada");
+    print("Conta não encontrada.");
     return;
   }
 
   print("\n Extrato de ${conta.titular}");
 
   if(conta.extrato.isEmpty){
-    print("Nenhuma movimentação");
+    print("Nenhuma movimentação.");
+    return;
   }
 
   for(var item in conta.extrato){
@@ -190,7 +191,7 @@ void removerConta(Banco banco){
   String titular = lerEntrada("Digite o nome do titular:");
 
   if(titular.trim().isEmpty){
-    print("Nome do titular inválido");
+    print("Nome do titular inválido.");
     return;
   }
 

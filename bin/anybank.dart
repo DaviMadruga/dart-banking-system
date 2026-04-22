@@ -10,15 +10,18 @@ import 'dart:io';
 
 void main(){
   Banco banco = criarBancoInicial();
-  
+  iniciarSistema(banco);
+}
+
+void iniciarSistema(Banco banco){
   bool executando = true;
-  String? opcao = "";
+  String opcao = "";
 
   while(executando){
     print("");
     mostrarMenu();
     print("Escolha uma opção:");
-    opcao = stdin.readLineSync();
+    opcao = stdin.readLineSync() ?? "";
     
     switch(opcao){
       case "1":
@@ -31,7 +34,7 @@ void main(){
       break;
       case "3":
         mostrarSecao("TRANSFERENCIA DE CONTAS");
-        transferenciaDeContas(banco);
+        transferirEntreContas(banco);
       break;
       case "4":
         mostrarSecao("CRIAÇÃO DE NOVA CONTA");
@@ -58,7 +61,7 @@ void main(){
         executando = false;
       break;
       default:
-        print("Opção inválida. Tente novamente");
+        print("Opção inválida. Tente novamente.");
     }
   }
 }
