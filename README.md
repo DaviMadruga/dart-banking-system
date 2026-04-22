@@ -20,26 +20,42 @@ O projeto simula operações bancárias reais através de um menu interativo no 
 
 ---
 
-## 🧠 Conceitos de POO utilizados
+## 🧠 Conceitos aplicados
 
-* 🔹 Encapsulamento
-* 🔹 Herança
-* 🔹 Polimorfismo
-* 🔹 Classes abstratas
-* 🔹 Organização em camadas (models, services, utils)
-
+- Programação Orientada a Objetos (POO)
+- Herança
+- Polimorfismo
+- Encapsulamento
+- Classes abstratas
+- Organização em camadas (models, services, utils)
+- Manipulação de listas
+- Tratamento de entradas do usuário
 ---
 
 ## 📁 Estrutura do Projeto
 
 ```
 lib/
- ├── models/       # Classes de domínio (Conta e suas variações)
- ├── services/     # Lógica do sistema (Banco)
- ├── utils/        # Funções auxiliares (exibição)
- ├── mixins/       # Comportamentos reutilizáveis
+ ├── models/
+ │    ├── conta.dart
+ │    ├── conta_corrente.dart
+ │    ├── conta_poupanca.dart
+ │    ├── conta_salario.dart
+ │    ├── conta_empresa.dart
+ │    └── conta_investimento.dart
+ │
+ ├── services/
+ │    ├── banco.dart
+ │    └── menu_services.dart
+ │
+ ├── utils/
+ │    └── exibicao.dart
+ │
+ └── mixins/
+      └── imposto.dart
+
 bin/
- └── anybank.dart  # Arquivo principal (main)
+ └── anybank.dart
 ```
 
 ---
