@@ -56,6 +56,9 @@ lib/
 
 bin/
  └── anybank.dart
+
+test/
+ └── banco_test.dart
 ```
 
 ---

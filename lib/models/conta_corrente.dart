@@ -12,6 +12,7 @@ class ContaCorrente extends Conta{
     }
     if(saldo + emprestimo >= valor){
       removerSaldo(valor);
+      extrato.add("Saque realizado: R\$${valor}");
       return true;
     }
     return false;
