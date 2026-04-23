@@ -2,21 +2,33 @@
 
 ## 📌 Descrição
 
-O **AnyBank** é um sistema bancário desenvolvido em Dart com foco em Programação Orientada a Objetos (POO).
-O projeto simula operações bancárias reais através de um menu interativo no terminal.
+O **AnyBank** é um sistema bancário desenvolvido em Dart com foco em aplicar conceitos de **Programação Orientada a Objetos (POO)**, organização em camadas e **testes automatizados**.
+
+O sistema simula operações bancárias reais, permitindo gerenciamento completo de contas e transações.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-* ✔ Criar contas (Corrente, Poupança, Salário, Empresa, Investimento)
-* ✔ Listar contas cadastradas
-* ✔ Buscar conta por titular
-* ✔ Depositar dinheiro
-* ✔ Sacar dinheiro
-* ✔ Transferir entre contas
-* ✔ Remover conta (com confirmação)
-* ✔ Visualizar extrato de movimentações
+* ✅ Criação de contas:
+
+  * Conta Corrente
+  * Conta Poupança
+  * Conta Salário
+  * Conta Empresa
+  * Conta Investimento
+
+* 💸 Operações:
+
+  * Depósito
+  * Saque
+  * Transferência entre contas
+
+* 📄 Controle:
+
+  * Consulta de saldo
+  * Extrato de movimentações
+  * Remoção de contas
 
 ---
 
@@ -30,6 +42,7 @@ O projeto simula operações bancárias reais através de um menu interativo no 
 - Organização em camadas (models, services, utils)
 - Manipulação de listas
 - Tratamento de entradas do usuário
+- Testes automatizados com `dart test`
 ---
 
 ## 📁 Estrutura do Projeto
@@ -73,6 +86,13 @@ test/
 
 ```bash
 dart run
+```
+
+---
+## 🧪 Executar testes
+
+```bash
+dart test
 ```
 
 ---
